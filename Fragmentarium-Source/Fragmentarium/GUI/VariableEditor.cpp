@@ -274,6 +274,17 @@ void VariableEditor::unlockGroup()
     }
 }
 
+QString VariableEditor::cameraSettings() {
+
+    QString gs;
+    foreach (VariableWidget* variable, variables) {
+        if (variable->getGroup() == "Camera") {
+            gs += variable->getName() + " = " + variable->toSettingsString() + "\n";
+        }
+    }
+    return gs;
+}
+
 void VariableEditor::groupToPreset() {
     QWidget* t = tabWidget->widget(tabWidget->currentIndex());
 
@@ -1103,7 +1114,7 @@ void VariableEditor::setEasingCurves(QString ecset)
 int VariableEditor::getKeyFrameCount()
 {
     int cnt = 0;
-    QRegExp rx = QRegExp("(KeyFrame\\.[0-9]+)");
+    QRegExp rx = QRegExp("(KeyFrame\\.[0-9]{3,9})");
      foreach (QString preset, presets.keys()) {
          if (rx.indexIn(preset) != -1) {
             QString p = presets[preset];
@@ -1138,9 +1149,9 @@ QStringList VariableEditor::getPresetByName(QString name)
 int VariableEditor::getCurrentKeyFrame()
 {
 
-    QRegExp rx = QRegExp(R"(KeyFrame\\.[0-9]+)");
+    QRegExp rx = QRegExp("KeyFrame\\.([0-9]{3,9})");
     if(rx.indexIn(presetComboBox->currentText()) != -1) {
-        return presetComboBox->currentText().split(".").at(1).toInt();
+        return rx.cap(1).toInt();
     }
 
     return -1;
