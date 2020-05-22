@@ -35,27 +35,28 @@ Status
 
 ## Update the main repository...
 
-      sudo apt-get update -qq
+      sudo apt-get -qq update
 
 ## Ensure these packages are installed...
 
-      sudo apt-get -qq install cmake
-      sudo apt-get -qq install extra-cmake-modules
-      sudo apt-get -qq install libopenexr-dev
-      sudo apt-get -qq install libilmbase-dev
-      sudo apt-get -qq install libqt5scripttools5
-      sudo apt-get -qq install libqt5gui5
-      sudo apt-get -qq install libqt5svg5-dev
-      sudo apt-get -qq install libqt5opengl5-dev
-      sudo apt-get -qq install libqt5xmlpatterns5-dev
-      sudo apt-get -qq install qt5-qmake
-      sudo apt-get -qq install qttools5-dev
-      sudo apt-get -qq install qtbase5-dev
-      sudo apt-get -qq install qt5-style-plugins
-      sudo apt-get -qq install qt5-image-formats-plugins
-      sudo apt-get -qq install qtscript5-dev
-      sudo apt-get -qq install libglm-dev
-      sudo apt-get -qq install zlib1g-dev
+      sudo apt-get -qq install cmake \
+                               extra-cmake-modules \
+                               libopenexr-dev \
+                               libilmbase-dev \
+                               libqt5scripttools5 \
+                               libqt5gui5 \
+                               libqt5svg5-dev \
+                               libqt5opengl5-dev \
+                               libqt5xmlpatterns5-dev \
+                               qt5-qmake \
+                               qttools5-dev \
+                               qtbase5-dev \
+                               qt5-style-plugins \
+                               qt5-image-formats-plugins \
+                               qtscript5-dev \
+                               libglm-dev \
+                               zlib1g-dev
+
 
 ## Get the source...
 
